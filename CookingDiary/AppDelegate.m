@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DBManager.h"
+#import "NSFileManager+Cooking.h"
 
 @interface AppDelegate ()
 
@@ -16,10 +18,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    [[DBManager shared] insertData:@"insert into studentsDetail (regno,name, department, year) values (\"5\",\"Roger 5\", \"12\", \"2010\")"];
+    NSArray * results = [[DBManager shared] findBy:@"select name, department, year from studentsDetail where department=\"12\""];
+    NSLog(@"%@", results);
+    
+    
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

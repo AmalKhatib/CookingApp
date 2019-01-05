@@ -7,31 +7,47 @@
 //
 
 #import "RootViewController.h"
+#import "AddEntryViewController.h"
+#import "DetailsViewController.h"
 
-@interface RootViewController ()
-
+@interface RootViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *list;
 @end
 
 @implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.tableFooterView = [UIView new];
+    self.list = [[NSMutableArray alloc] initWithObjects:@"Roger", @"Ivan", @"Jp", nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue destinationViewController] isKindOfClass:[DetailsViewController class]]) {
+        DetailsViewController *vc = (DetailsViewController *)[segue destinationViewController];
+        vc.title = (NSString *)sender;
+    }
 }
-*/
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableViewr {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Ingradient Cell" forIndexPath:indexPath];
+    [[cell textLabel] setText: self.list[indexPath.row]];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"View Details Segue" sender:self.list[indexPath.row]];
+}
 @end

@@ -2,7 +2,7 @@
 //  main.m
 //  CookingDiary
 //
-//  Created by Greatfeat on 04/01/2019.
+//  Created by Roger Molas on 04/01/2019.
 //  Copyright © 2019 Roger Molas. All rights reserved.
 //
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3521E0687E000301D4 /* IngredientCell.m */; };
+		1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */; };
+		1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */; };
+		1D4B4A4021E0856D000301D4 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3F21E0856D000301D4 /* DBManager.m */; };
+		1D4B4A4621E091D4000301D4 /* NSFileManager+Cooking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A4521E091D4000301D4 /* NSFileManager+Cooking.m */; };
 		1D66AD1521DEE51900F4B703 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66AD1421DEE51900F4B703 /* AppDelegate.m */; };
 		1D66AD1B21DEE51900F4B703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D66AD1921DEE51900F4B703 /* Main.storyboard */; };
 		1D66AD1D21DEE51A00F4B703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D66AD1C21DEE51A00F4B703 /* Assets.xcassets */; };
@@ -18,6 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D4B4A3421E0687E000301D4 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
+		1D4B4A3521E0687E000301D4 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
+		1D4B4A3721E0694D000301D4 /* AddIngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddIngredientCell.h; sourceTree = "<group>"; };
+		1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddIngredientCell.m; sourceTree = "<group>"; };
+		1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1D4B4A3E21E0856D000301D4 /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		1D4B4A3F21E0856D000301D4 /* DBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		1D4B4A4121E090FE000301D4 /* cooking.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = cooking.db; sourceTree = "<group>"; };
+		1D4B4A4421E091D4000301D4 /* NSFileManager+Cooking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Cooking.h"; sourceTree = "<group>"; };
+		1D4B4A4521E091D4000301D4 /* NSFileManager+Cooking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Cooking.m"; sourceTree = "<group>"; };
 		1D66AD1021DEE51900F4B703 /* CookingDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D66AD1321DEE51900F4B703 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D66AD1421DEE51900F4B703 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,17 +54,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D4B4A3321E06814000301D4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B4A3421E0687E000301D4 /* IngredientCell.h */,
+				1D4B4A3521E0687E000301D4 /* IngredientCell.m */,
+				1D4B4A3721E0694D000301D4 /* AddIngredientCell.h */,
+				1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1D4B4A3A21E08551000301D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D4B4A3D21E08558000301D4 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B4A3E21E0856D000301D4 /* DBManager.h */,
+				1D4B4A3F21E0856D000301D4 /* DBManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1D4B4A4221E09178000301D4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B4A4421E091D4000301D4 /* NSFileManager+Cooking.h */,
+				1D4B4A4521E091D4000301D4 /* NSFileManager+Cooking.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1D66AD0721DEE51900F4B703 = {
 			isa = PBXGroup;
 			children = (
 				1D66AD1221DEE51900F4B703 /* CookingDiary */,
 				1D66AD1121DEE51900F4B703 /* Products */,
+				1D4B4A3A21E08551000301D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +118,9 @@
 		1D66AD1221DEE51900F4B703 /* CookingDiary */ = {
 			isa = PBXGroup;
 			children = (
+				1D4B4A4221E09178000301D4 /* Extension */,
+				1D4B4A3D21E08558000301D4 /* Manager */,
+				1D4B4A3321E06814000301D4 /* Cell */,
 				1D66AD1321DEE51900F4B703 /* AppDelegate.h */,
 				1D66AD1421DEE51900F4B703 /* AppDelegate.m */,
 				1D66AD2921DEE73300F4B703 /* RootViewController.h */,
@@ -77,6 +134,7 @@
 				1D66AD1E21DEE51A00F4B703 /* LaunchScreen.storyboard */,
 				1D66AD2121DEE51B00F4B703 /* Info.plist */,
 				1D66AD2221DEE51B00F4B703 /* main.m */,
+				1D4B4A4121E090FE000301D4 /* cooking.db */,
 			);
 			path = CookingDiary;
 			sourceTree = "<group>";
@@ -153,9 +211,13 @@
 			files = (
 				1D66AD2321DEE51B00F4B703 /* main.m in Sources */,
 				1D66AD3121DEE77000F4B703 /* DetailsViewController.m in Sources */,
+				1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */,
+				1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */,
 				1D66AD2E21DEE75600F4B703 /* AddEntryViewController.m in Sources */,
 				1D66AD2B21DEE73300F4B703 /* RootViewController.m in Sources */,
 				1D66AD1521DEE51900F4B703 /* AppDelegate.m in Sources */,
+				1D4B4A4621E091D4000301D4 /* NSFileManager+Cooking.m in Sources */,
+				1D4B4A4021E0856D000301D4 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
