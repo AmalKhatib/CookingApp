@@ -22,7 +22,32 @@
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
     [self.addButton.layer setCornerRadius:self.addButton.frame.size.width / 2];
-    self.ingridients = [[NSMutableArray alloc] initWithObjects:@"Roger", @"Ivan", @"Jp", nil];
+    self.ingridients = [[NSMutableArray alloc] init];
+}
+
+- (IBAction)addIngridient:(id)sender {
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Add ingridient" message:nil
+                                preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        [textField setPlaceholder:@"Name"];
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        [textField setPlaceholder:@"Amount"];
+        [textField setKeyboardType:UIKeyboardTypeDecimalPad];
+    }];
+    
+    UIAlertAction *add = [UIAlertAction
+                          actionWithTitle:@"Add" style:UIAlertActionStyleDefault
+                          handler:^(UIAlertAction * _Nonnull action) {
+                              [self.ingridients insertObject:alert.textFields[0].text atIndex:0];
+                              [self.tableView reloadData];
+                                                    
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    [alert addAction:add];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

@@ -78,8 +78,7 @@ static sqlite3_stmt *statement = nil;
         const char *query_stmt = [query UTF8String];
         NSMutableArray *resultArray = [[NSMutableArray alloc] init];
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-            if (sqlite3_step(statement) == SQLITE_ROW) {
-                
+            while (sqlite3_step(statement) == SQLITE_ROW) {
                 NSLog(@"iterate");
                 NSString *name = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 0)];
                 [resultArray addObject:name];
@@ -89,12 +88,13 @@ static sqlite3_stmt *statement = nil;
                 
                 NSString *year = [[NSString alloc]initWithUTF8String: (const char *) sqlite3_column_text(statement, 2)];
                 [resultArray addObject:year];
-                sqlite3_reset(statement);
-                return resultArray;
-            } else {
-                NSLog(@"Not found");
-                return nil;
             }
+            sqlite3_reset(statement);
+            return resultArray;
+            
+        } else {
+            NSLog(@"Not found");
+            return nil;
         }
     }
     return nil;
