@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D12A5C621E3373900B9AB1C /* cooking.db in Resources */ = {isa = PBXBuildFile; fileRef = 1D4B4A4121E090FE000301D4 /* cooking.db */; };
 		1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3521E0687E000301D4 /* IngredientCell.m */; };
 		1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */; };
 		1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */; };
@@ -183,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D12A5C621E3373900B9AB1C /* cooking.db in Resources */,
 				1D66AD2021DEE51A00F4B703 /* LaunchScreen.storyboard in Resources */,
 				1D66AD1D21DEE51A00F4B703 /* Assets.xcassets in Resources */,
 				1D66AD1B21DEE51900F4B703 /* Main.storyboard in Resources */,

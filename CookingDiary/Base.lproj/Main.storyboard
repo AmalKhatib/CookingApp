@@ -116,17 +116,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEA-QS-e2F">
-                                <rect key="frame" x="0.0" y="296.5" width="375" height="370.5"/>
+                                <rect key="frame" x="0.0" y="286.5" width="375" height="380.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingradients Cell" rowHeight="65" id="vCB-Ti-oC9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingradient Cell" rowHeight="65" id="vCB-Ti-oC9" customClass="IngredientCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vCB-Ti-oC9" id="Rya-W1-amo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-6Y-GZm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-6Y-GZm">
                                                     <rect key="frame" x="25" y="11" width="335" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -140,8 +140,15 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="RqJ-6Y-GZm" secondAttribute="bottom" id="oiE-6R-GHy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="RqJ-6Y-GZm" id="YIS-qb-M5H"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pEo-cO-Clv" id="p8o-vD-Pyj"/>
+                                    <outlet property="delegate" destination="pEo-cO-Clv" id="ghu-rO-zW0"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +165,7 @@
                             <constraint firstItem="dh1-Ev-uXw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rDa-wz-vVF" secondAttribute="trailing" id="PHt-H5-iS4"/>
                             <constraint firstItem="dh1-Ev-uXw" firstAttribute="trailing" secondItem="gJ7-hc-0oj" secondAttribute="trailing" constant="10" id="WyJ-e5-bni"/>
                             <constraint firstItem="rDa-wz-vVF" firstAttribute="leading" secondItem="NUF-KW-TZm" secondAttribute="leading" constant="298" id="Yr0-0K-Vv6"/>
-                            <constraint firstItem="kEA-QS-e2F" firstAttribute="top" secondItem="Oe5-1w-uDA" secondAttribute="bottom" constant="10" id="a06-qH-qjM"/>
+                            <constraint firstItem="kEA-QS-e2F" firstAttribute="top" secondItem="Oe5-1w-uDA" secondAttribute="bottom" id="a06-qH-qjM"/>
                             <constraint firstItem="dh1-Ev-uXw" firstAttribute="bottom" secondItem="kEA-QS-e2F" secondAttribute="bottom" id="cz7-Ti-XUp"/>
                             <constraint firstItem="Oe5-1w-uDA" firstAttribute="leading" secondItem="dh1-Ev-uXw" secondAttribute="leading" constant="10" id="jP9-sS-fET"/>
                             <constraint firstItem="dh1-Ev-uXw" firstAttribute="trailing" secondItem="kEA-QS-e2F" secondAttribute="trailing" id="kbc-NM-hIv"/>
@@ -170,6 +177,9 @@
                     <navigationItem key="navigationItem" title="Details" id="4Mw-eL-waq">
                         <barButtonItem key="backBarButtonItem" title="Back" id="TOQ-rP-5Im"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="kEA-QS-e2F" id="GXw-fm-4q8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biH-f3-5HA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,7 +18,7 @@ static sqlite3_stmt *statement = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[DBManager alloc] init];
-        [sharedInstance createDB];
+//        [sharedInstance createDB];
     });
     return sharedInstance;
 }
@@ -26,30 +26,48 @@ static sqlite3_stmt *statement = nil;
 - (BOOL)createDB {
     NSString *docsDir; NSArray *dirPaths;
     // Get the documents directory
-    dirPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES); docsDir = dirPaths[0];
-    NSLog(@"Directory path : %@", dirPaths);
-    
+    dirPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+    NSLog(@"%@", docsDir);
     // Build the path to the database file
     databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"cooking.db"]];
+    
     BOOL isSuccess = YES;
     NSFileManager *filemgr = [NSFileManager defaultManager];
     if ([filemgr fileExistsAtPath: databasePath ] == NO) {
-        const char *dbpath = [databasePath UTF8String];
-        if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-            char *errMsg;
-            const char *sql_stmt =
-            "create table if not exists studentsDetail (regno integer primary key, name text, department text, year text)";
-            
-            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
-                isSuccess = NO;
-                NSLog(@"Failed to create table");
-            }
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"cooking" ofType:@"db"];
+        if (resourcePath == NULL) {
+            NSLog(@"Failed to open/create database");
+            return NO;
+        }
+        
+        if ([fileManager copyItemAtPath:resourcePath toPath:docsDir error:nil]) {
             sqlite3_close(database);
             return isSuccess;
         } else {
             isSuccess = NO;
             NSLog(@"Failed to open/create database");
         }
+        NSLog(@"%@", docsDir);
+        
+        
+//        const char *dbpath = [databasePath UTF8String];
+//        if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
+//            char *errMsg;
+//            const char *sql_stmt =
+//            "create table if not exists recipe (name text primary key, people integer, grams double)";
+//
+//            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
+//                isSuccess = NO;
+//                NSLog(@"Failed to create table");
+//            }
+//            sqlite3_close(database);
+//            return isSuccess;
+//        } else {
+//            isSuccess = NO;
+//            NSLog(@"Failed to open/create database");
+//        }
     }
     return isSuccess;
 }

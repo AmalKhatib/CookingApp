@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AddIngredientCell.h"
 
-@interface AddEntryViewController ()
+@interface AddEntryViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIButton *addButton;
 @property (nonatomic, strong) NSMutableArray *ingridients;
@@ -51,7 +51,7 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableViewr {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
@@ -60,9 +60,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    AddIngredientCell * cell = (AddIngredientCell *)[tableView dequeueReusableCellWithIdentifier:@"Add Ingredient Cell" forIndexPath:indexPath];
+    AddIngredientCell * cell = (AddIngredientCell *)[tableView
+                                                     dequeueReusableCellWithIdentifier:@"Add Ingredient Cell"
+                                                     forIndexPath:indexPath];
     cell.titleLabel.text = _ingridients[indexPath.row];
     return cell;
+}
+
+// Edit Row
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_ingridients removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSLog(@"Edit");
+    }
 }
 
 #pragma mark - UITableViewDelegate
