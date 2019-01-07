@@ -17,28 +17,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[DBManager shared] insertData:@"insert into studentsDetail (regno,name, department, year) values (\"5\",\"Roger 5\", \"12\", \"2010\")"];
-//    NSArray * results = [[DBManager shared] findBy:@"select name, department, year from studentsDetail where department=\"12\""];
-//    NSLog(@"%@", results);
-    
-    
-    NSString *docsDir; NSArray *dirPaths;
-    // Get the documents directory
-    dirPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
-    // Build the path to the database file
+    NSString *docsDir = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"cooking.db"]];
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath: databasePath ] == NO) {
+    if ([filemgr fileExistsAtPath: databasePath] == NO) {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"cooking" ofType:@"db"];
+        NSLog(@"%@",resourcePath);
         if (resourcePath == NULL) {
             NSLog(@"Failed to open/create database");
         }
-        if ([fileManager copyItemAtPath:resourcePath toPath:docsDir error:nil]) {
-             NSLog(@"Database created");
+        NSError *err;
+        [fileManager copyItemAtPath:resourcePath toPath:databasePath error:&err];
+        if (err) {
+            NSLog(@"\nError : %@", err);
+        } else {
+            NSLog(@"\n Database Created: %@", err);
         }
-        NSLog(@"%@", docsDir);
     }
     return YES;
 }
