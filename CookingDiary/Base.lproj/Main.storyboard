@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Ingradient Cell" rowHeight="65" id="uEM-aD-VuB" customClass="IngredientCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="65" id="uEM-aD-VuB" customClass="IngredientCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uEM-aD-VuB" id="3b9-JL-exu">
@@ -178,7 +178,10 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="TOQ-rP-5Im"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="BQs-YW-5xX" id="08e-at-af4"/>
+                        <outlet property="peopleLabel" destination="rDa-wz-vVF" id="Jmb-dA-PAK"/>
                         <outlet property="tableView" destination="kEA-QS-e2F" id="GXw-fm-4q8"/>
+                        <outlet property="titleLabel" destination="gJ7-hc-0oj" id="yPc-CY-gaq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biH-f3-5HA" userLabel="First Responder" sceneMemberID="firstResponder"/>

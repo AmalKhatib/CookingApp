@@ -12,6 +12,7 @@
 #import "AddIngredientCell.h"
 
 #import "IngredientModel.h"
+#import "RecipeModel.h"
 #import "DBManager.h"
 
 @interface AddEntryViewController ()<UITableViewDelegate, UITableViewDataSource,
@@ -37,9 +38,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate>
     if ([self.peopleField.text  isEqual: @""]) { return; }
     if ([self.gramsField.text  isEqual: @""]) { return; }
     
-    NSString *query = [NSString stringWithFormat:@"insert into recipe (name, people, grams, image) values (\"%@\", \"%ld\", \"%@\", \"%@\")", self.recipeField.text, [self.peopleField.text integerValue], self.gramsField.text, self.imageString];
-    NSLog(@"%@", query);
-    [[DBManager shared] insertData:query];
+    
+    if ([[DBManager shared] isOpen]) {
+        NSString *query = [NSString stringWithFormat:@"""insert into recipe """
+                           """(name, people, grams, image) """
+                           """values ('%@', '%ld', '%@', '%@')",
+                           self.recipeField.text, [self.peopleField.text integerValue], self.gramsField.text, self.imageString];
+        [RecipeModel executeUpdateQuery:query];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)addIngridient:(id)sender {
@@ -123,7 +130,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     self.imageView.image = image;
     NSData *imageData = UIImagePNGRepresentation(_imageView.image);
     NSString *base64String = [imageData base64EncodedStringWithOptions:0];
-    self.imageString = @"base64String";
+    self.imageString = base64String;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

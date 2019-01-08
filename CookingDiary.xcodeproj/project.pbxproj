@@ -12,6 +12,10 @@
 		1D22651321E4D43D00D7CE24 /* RecipeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651221E4D43D00D7CE24 /* RecipeModel.m */; };
 		1D22651621E4D47A00D7CE24 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651521E4D47A00D7CE24 /* TagModel.m */; };
 		1D22651821E4D8DA00D7CE24 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D22651721E4D8DA00D7CE24 /* MobileCoreServices.framework */; };
+		1D22652221E4E57200D7CE24 /* FCModelCachedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651A21E4E57200D7CE24 /* FCModelCachedObject.m */; };
+		1D22652321E4E57200D7CE24 /* FCModelNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651F21E4E57200D7CE24 /* FCModelNotificationCenter.m */; };
+		1D22652421E4E57200D7CE24 /* FCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22652021E4E57200D7CE24 /* FCModel.m */; };
+		1D22652521E4E57200D7CE24 /* FCModelDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22652121E4E57200D7CE24 /* FCModelDatabase.m */; };
 		1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3521E0687E000301D4 /* IngredientCell.m */; };
 		1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */; };
 		1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */; };
@@ -35,6 +39,14 @@
 		1D22651421E4D47A00D7CE24 /* TagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		1D22651521E4D47A00D7CE24 /* TagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		1D22651721E4D8DA00D7CE24 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1D22651A21E4E57200D7CE24 /* FCModelCachedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelCachedObject.m; sourceTree = "<group>"; };
+		1D22651B21E4E57200D7CE24 /* FCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModel.h; sourceTree = "<group>"; };
+		1D22651C21E4E57200D7CE24 /* FCModelNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelNotificationCenter.h; sourceTree = "<group>"; };
+		1D22651D21E4E57200D7CE24 /* FCModelDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelDatabase.h; sourceTree = "<group>"; };
+		1D22651E21E4E57200D7CE24 /* FCModelCachedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCModelCachedObject.h; sourceTree = "<group>"; };
+		1D22651F21E4E57200D7CE24 /* FCModelNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelNotificationCenter.m; sourceTree = "<group>"; };
+		1D22652021E4E57200D7CE24 /* FCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModel.m; sourceTree = "<group>"; };
+		1D22652121E4E57200D7CE24 /* FCModelDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCModelDatabase.m; sourceTree = "<group>"; };
 		1D4B4A3421E0687E000301D4 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		1D4B4A3521E0687E000301D4 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		1D4B4A3721E0694D000301D4 /* AddIngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddIngredientCell.h; sourceTree = "<group>"; };
@@ -89,6 +101,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1D22651921E4E57200D7CE24 /* FCModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D22651A21E4E57200D7CE24 /* FCModelCachedObject.m */,
+				1D22651B21E4E57200D7CE24 /* FCModel.h */,
+				1D22651C21E4E57200D7CE24 /* FCModelNotificationCenter.h */,
+				1D22651D21E4E57200D7CE24 /* FCModelDatabase.h */,
+				1D22651E21E4E57200D7CE24 /* FCModelCachedObject.h */,
+				1D22651F21E4E57200D7CE24 /* FCModelNotificationCenter.m */,
+				1D22652021E4E57200D7CE24 /* FCModel.m */,
+				1D22652121E4E57200D7CE24 /* FCModelDatabase.m */,
+			);
+			path = FCModel;
+			sourceTree = "<group>";
+		};
 		1D4B4A3321E06814000301D4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +167,7 @@
 		1D66AD1221DEE51900F4B703 /* CookingDiary */ = {
 			isa = PBXGroup;
 			children = (
+				1D22651921E4E57200D7CE24 /* FCModel */,
 				1D22651021E4D33500D7CE24 /* Models */,
 				1D4B4A3D21E08558000301D4 /* Manager */,
 				1D4B4A3321E06814000301D4 /* Cell */,
@@ -271,9 +299,13 @@
 				1D22650F21E4D33000D7CE24 /* IngredientModel.m in Sources */,
 				1D66AD2B21DEE73300F4B703 /* RootViewController.m in Sources */,
 				1D22651621E4D47A00D7CE24 /* TagModel.m in Sources */,
+				1D22652421E4E57200D7CE24 /* FCModel.m in Sources */,
 				1D22651321E4D43D00D7CE24 /* RecipeModel.m in Sources */,
+				1D22652221E4E57200D7CE24 /* FCModelCachedObject.m in Sources */,
+				1D22652521E4E57200D7CE24 /* FCModelDatabase.m in Sources */,
 				1D66AD1521DEE51900F4B703 /* AppDelegate.m in Sources */,
 				1D4B4A4021E0856D000301D4 /* DBManager.m in Sources */,
+				1D22652321E4E57200D7CE24 /* FCModelNotificationCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +449,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DDSBS2Q7T;
 				INFOPLIST_FILE = CookingDiary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.CookingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,7 +467,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DDSBS2Q7T;
 				INFOPLIST_FILE = CookingDiary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.CookingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

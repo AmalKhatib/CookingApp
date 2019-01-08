@@ -23,20 +23,21 @@ static sqlite3_stmt *statement = nil;
     return sharedInstance;
 }
 
-- (BOOL)insertData:(NSString *)query
-{
-    const char *dbpath = [databasePath UTF8String];
-    if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into recipe (name, people, grams, image) values(\"%s\",\"%d\", \"%s\", \"%s\")", "ddd", 1, "ddd", "dddd"];
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE) {
-            return YES;
-        } else {
-            return NO;
-        }
+- (BOOL)isOpen {
+    if (!self.db) {
+        NSString *docsDir = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: @"cooking.db"]];
+        _db = [FMDatabase databaseWithPath:databasePath];
     }
-    return NO;
+    return [_db open];
+}
+
+- (BOOL)close {
+    return [_db close];
+}
+
+- (FMResultSet *)query:(NSString *)statement {
+    return [_db executeQuery:statement];
 }
 
 - (NSArray *)findBy:(NSString *)query

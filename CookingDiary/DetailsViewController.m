@@ -17,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.details.name;
+    
+    self.titleLabel.text = _details.name;
+    self.peopleLabel.text = [NSString stringWithFormat:@"%ld People(s)",(long)_details.people ];
+    self.gramsLabel.text = _details.grams;
+    NSString *base64String = [NSString stringWithFormat:@"data:image/png;base64,%@", _details.image];
+    NSURL *url = [NSURL URLWithString:base64String];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:imageData];
+    self.imageView.image = image;
 }
 
 #pragma mark - UITableViewDataSource

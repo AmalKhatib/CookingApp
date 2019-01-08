@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RecipeModel.h"
 @interface DetailsViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *peopleLabel;
+@property (nonatomic, strong) IBOutlet UILabel *gramsLabel;
 
+@property(nonatomic) Recipe *details;
 @end

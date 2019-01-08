@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import <FMDB/FMDatabase.h>
+
 @interface DBManager : NSObject
 {
     NSString *databasePath;
 }
 
+@property (nonatomic) FMDatabase *db;
+- (BOOL)isOpen;
+- (BOOL)close;
+- (FMResultSet *)query:(NSString *)statement;
+
 + (DBManager *)shared;
-- (BOOL)insertData:(NSString *)query;
 - (NSArray *)findBy:(NSString *)query;
 
 @end

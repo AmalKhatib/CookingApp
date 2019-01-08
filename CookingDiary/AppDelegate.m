@@ -8,10 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DBManager.h"
-
-@interface AppDelegate ()
-
-@end
+#import "FCModel.h"
 
 @implementation AppDelegate
 
@@ -35,6 +32,10 @@
             NSLog(@"\n Database Created: %@", err);
         }
     }
+    
+    [FCModel openDatabaseAtPath:databasePath withDatabaseInitializer:^(FMDatabase *db) {
+    } schemaBuilder:^(FMDatabase *db, int *schemaVersion) {
+    }];
     return YES;
 }
 
