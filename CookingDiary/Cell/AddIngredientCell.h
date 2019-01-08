@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IngredientModel.h"
 
 @interface AddIngredientCell : UITableViewCell
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *qtyLabel;
 
-- (void)setData:(NSDictionary *)info;
+- (void)setData:(IngredientModel *)model;
 @end

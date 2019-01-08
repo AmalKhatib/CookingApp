@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AddEntryViewController : UIViewController
-
+@property(nonatomic, strong) IBOutlet UITextField *recipeField;
+@property(nonatomic, strong) IBOutlet UITextField *peopleField;
+@property(nonatomic, strong) IBOutlet UITextField *gramsField;
+@property(nonatomic, strong) IBOutlet UIImageView *imageView;
 @end

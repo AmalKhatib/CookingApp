@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D12A5C621E3373900B9AB1C /* cooking.db in Resources */ = {isa = PBXBuildFile; fileRef = 1D4B4A4121E090FE000301D4 /* cooking.db */; };
+		1D22650F21E4D33000D7CE24 /* IngredientModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22650E21E4D33000D7CE24 /* IngredientModel.m */; };
+		1D22651321E4D43D00D7CE24 /* RecipeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651221E4D43D00D7CE24 /* RecipeModel.m */; };
+		1D22651621E4D47A00D7CE24 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D22651521E4D47A00D7CE24 /* TagModel.m */; };
+		1D22651821E4D8DA00D7CE24 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D22651721E4D8DA00D7CE24 /* MobileCoreServices.framework */; };
 		1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3521E0687E000301D4 /* IngredientCell.m */; };
 		1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B4A3821E0694D000301D4 /* AddIngredientCell.m */; };
 		1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */; };
@@ -20,9 +24,17 @@
 		1D66AD2B21DEE73300F4B703 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66AD2A21DEE73300F4B703 /* RootViewController.m */; };
 		1D66AD2E21DEE75600F4B703 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66AD2D21DEE75600F4B703 /* AddEntryViewController.m */; };
 		1D66AD3121DEE77000F4B703 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66AD3021DEE77000F4B703 /* DetailsViewController.m */; };
+		C4ECB730DF5A5C33849930DE /* libPods-CookingDiary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C6D11D2CCA3FCAF6BF1998 /* libPods-CookingDiary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D22650D21E4D33000D7CE24 /* IngredientModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientModel.h; sourceTree = "<group>"; };
+		1D22650E21E4D33000D7CE24 /* IngredientModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientModel.m; sourceTree = "<group>"; };
+		1D22651121E4D43D00D7CE24 /* RecipeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeModel.h; sourceTree = "<group>"; };
+		1D22651221E4D43D00D7CE24 /* RecipeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeModel.m; sourceTree = "<group>"; };
+		1D22651421E4D47A00D7CE24 /* TagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
+		1D22651521E4D47A00D7CE24 /* TagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
+		1D22651721E4D8DA00D7CE24 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1D4B4A3421E0687E000301D4 /* IngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientCell.h; sourceTree = "<group>"; };
 		1D4B4A3521E0687E000301D4 /* IngredientCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientCell.m; sourceTree = "<group>"; };
 		1D4B4A3721E0694D000301D4 /* AddIngredientCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddIngredientCell.h; sourceTree = "<group>"; };
@@ -45,6 +57,9 @@
 		1D66AD2D21DEE75600F4B703 /* AddEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		1D66AD2F21DEE77000F4B703 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		1D66AD3021DEE77000F4B703 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		21C6D11D2CCA3FCAF6BF1998 /* libPods-CookingDiary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CookingDiary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD7C6D68D41E8257A6A5331 /* Pods-CookingDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookingDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CookingDiary/Pods-CookingDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		D72ADB3B683B65F24C2E5040 /* Pods-CookingDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookingDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-CookingDiary/Pods-CookingDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +67,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D22651821E4D8DA00D7CE24 /* MobileCoreServices.framework in Frameworks */,
 				1D4B4A3C21E08551000301D4 /* libsqlite3.tbd in Frameworks */,
+				C4ECB730DF5A5C33849930DE /* libPods-CookingDiary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D22651021E4D33500D7CE24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D22650D21E4D33000D7CE24 /* IngredientModel.h */,
+				1D22650E21E4D33000D7CE24 /* IngredientModel.m */,
+				1D22651121E4D43D00D7CE24 /* RecipeModel.h */,
+				1D22651221E4D43D00D7CE24 /* RecipeModel.m */,
+				1D22651421E4D47A00D7CE24 /* TagModel.h */,
+				1D22651521E4D47A00D7CE24 /* TagModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1D4B4A3321E06814000301D4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +103,9 @@
 		1D4B4A3A21E08551000301D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D22651721E4D8DA00D7CE24 /* MobileCoreServices.framework */,
 				1D4B4A3B21E08551000301D4 /* libsqlite3.tbd */,
+				21C6D11D2CCA3FCAF6BF1998 /* libPods-CookingDiary.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,6 +125,7 @@
 				1D66AD1221DEE51900F4B703 /* CookingDiary */,
 				1D66AD1121DEE51900F4B703 /* Products */,
 				1D4B4A3A21E08551000301D4 /* Frameworks */,
+				8B23F200EE64DE78718FCC2B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +140,7 @@
 		1D66AD1221DEE51900F4B703 /* CookingDiary */ = {
 			isa = PBXGroup;
 			children = (
+				1D22651021E4D33500D7CE24 /* Models */,
 				1D4B4A3D21E08558000301D4 /* Manager */,
 				1D4B4A3321E06814000301D4 /* Cell */,
 				1D66AD1321DEE51900F4B703 /* AppDelegate.h */,
@@ -127,6 +161,15 @@
 			path = CookingDiary;
 			sourceTree = "<group>";
 		};
+		8B23F200EE64DE78718FCC2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7C6D68D41E8257A6A5331 /* Pods-CookingDiary.debug.xcconfig */,
+				D72ADB3B683B65F24C2E5040 /* Pods-CookingDiary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D66AD2621DEE51B00F4B703 /* Build configuration list for PBXNativeTarget "CookingDiary" */;
 			buildPhases = (
+				0960288F98D9211C087C91EF /* [CP] Check Pods Manifest.lock */,
 				1D66AD0C21DEE51900F4B703 /* Sources */,
 				1D66AD0D21DEE51900F4B703 /* Frameworks */,
 				1D66AD0E21DEE51900F4B703 /* Resources */,
@@ -193,6 +237,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0960288F98D9211C087C91EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CookingDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D66AD0C21DEE51900F4B703 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,7 +268,10 @@
 				1D4B4A3921E0694D000301D4 /* AddIngredientCell.m in Sources */,
 				1D4B4A3621E0687E000301D4 /* IngredientCell.m in Sources */,
 				1D66AD2E21DEE75600F4B703 /* AddEntryViewController.m in Sources */,
+				1D22650F21E4D33000D7CE24 /* IngredientModel.m in Sources */,
 				1D66AD2B21DEE73300F4B703 /* RootViewController.m in Sources */,
+				1D22651621E4D47A00D7CE24 /* TagModel.m in Sources */,
+				1D22651321E4D43D00D7CE24 /* RecipeModel.m in Sources */,
 				1D66AD1521DEE51900F4B703 /* AppDelegate.m in Sources */,
 				1D4B4A4021E0856D000301D4 /* DBManager.m in Sources */,
 			);
@@ -343,15 +411,13 @@
 		};
 		1D66AD2721DEE51B00F4B703 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAD7C6D68D41E8257A6A5331 /* Pods-CookingDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DDSBS2Q7T;
 				INFOPLIST_FILE = CookingDiary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.CookingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,15 +426,13 @@
 		};
 		1D66AD2821DEE51B00F4B703 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72ADB3B683B65F24C2E5040 /* Pods-CookingDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DDSBS2Q7T;
 				INFOPLIST_FILE = CookingDiary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.CookingDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

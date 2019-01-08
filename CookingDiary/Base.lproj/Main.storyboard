@@ -285,11 +285,14 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gd-Xy-ME7">
-                                                <rect key="frame" x="112" y="467.5" width="150" height="30"/>
+                                                <rect key="frame" x="112" y="467.5" width="150" height="42"/>
                                                 <color key="backgroundColor" red="0.34901960780000002" green="0.83137254900000002" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Add Image">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addImage:" destination="81s-bG-Oj3" eventType="touchUpInside" id="kdu-x5-IxJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-Lr-qxs">
                                                 <rect key="frame" x="132" y="51.5" width="26" height="26"/>
@@ -326,6 +329,7 @@
                                             <constraint firstItem="lZm-oj-10p" firstAttribute="centerX" secondItem="UI1-Yc-yRg" secondAttribute="centerX" id="j33-3J-bub"/>
                                             <constraint firstItem="Agl-NH-7OS" firstAttribute="top" secondItem="I91-Vk-IrM" secondAttribute="bottom" constant="30" id="jZU-W5-qud"/>
                                             <constraint firstItem="JCS-wF-In9" firstAttribute="top" secondItem="lZm-oj-10p" secondAttribute="bottom" constant="15" id="kFa-tJ-SdV"/>
+                                            <constraint firstItem="8gd-Xy-ME7" firstAttribute="height" secondItem="UI1-Yc-yRg" secondAttribute="height" multiplier="0.07" id="mrr-sp-JtH"/>
                                             <constraint firstItem="igS-2q-c3m" firstAttribute="top" secondItem="JCS-wF-In9" secondAttribute="bottom" constant="15" id="o6f-t9-RnX"/>
                                             <constraint firstItem="8gd-Xy-ME7" firstAttribute="top" secondItem="Agl-NH-7OS" secondAttribute="bottom" constant="10" id="tlw-bT-eiU"/>
                                         </constraints>
@@ -351,10 +355,18 @@
                         <viewLayoutGuide key="safeArea" id="eNT-JZ-V05"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Entry" id="b9a-wP-BVZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pPp-fn-drc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pPp-fn-drc">
+                            <connections>
+                                <action selector="saveData:" destination="81s-bG-Oj3" id="peV-vO-4Tp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="BZm-Lr-qxs" id="ab8-yJ-iG1"/>
+                        <outlet property="gramsField" destination="MdS-XU-PHv" id="iFf-oq-6hH"/>
+                        <outlet property="imageView" destination="Agl-NH-7OS" id="6Nf-5Y-1Dp"/>
+                        <outlet property="peopleField" destination="Z0F-BD-Oju" id="VZ1-2k-O98"/>
+                        <outlet property="recipeField" destination="lZm-oj-10p" id="j4u-Xe-m7Q"/>
                         <outlet property="tableView" destination="igS-2q-c3m" id="vFS-Wm-gJM"/>
                     </connections>
                 </viewController>

@@ -10,8 +10,9 @@
 
 @implementation AddIngredientCell
 
-- (void)setData:(NSDictionary *)info {
-    
+- (void)setData:(IngredientModel *)model {
+    self.titleLabel.text = model.name;
+    self.qtyLabel.text = model.amount;
 }
 
 @end
